@@ -46,6 +46,12 @@ function showTemperature(response) {
   wind.innerHTML = Math.round(response.data.wind.speed);
   let humidity = document.querySelector("#humidity");
   humidity.innerHTML = response.data.main.humidity;
+  let icon = document.querySelector("#icon");
+  icon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  console.log(response.data);
 }
 
 function showPosition(position) {
