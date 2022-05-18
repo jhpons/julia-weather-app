@@ -11,9 +11,12 @@ let days = [
 let day = days[today.getDay()];
 let hour = today.getHours();
 let minutes = today.getMinutes();
+if (minutes < 10) {
+  minutes = `0${minutes}`;
+}
 
 let p = document.querySelector("p");
-p.innerHTML = `${day} ${hour}:${minutes}`;
+p.innerHTML = `${day} <br> ${hour}:${minutes}`;
 
 function displayCity(event) {
   event.preventDefault();
@@ -39,6 +42,10 @@ function showTemperature(response) {
   let temperature = Math.round(response.data.main.temp);
   let degrees = document.querySelector("#degrees");
   degrees.innerHTML = `${temperature}`;
+  let wind = document.querySelector("#wind");
+  wind.innerHTML = Math.round(response.data.wind.speed);
+  let humidity = document.querySelector("#humidity");
+  humidity.innerHTML = response.data.main.humidity;
 }
 
 function showPosition(position) {

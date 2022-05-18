@@ -33,8 +33,9 @@ ul {
   list-style: none;
   text-align: left;
   font-size: 18px;
-  color: #3e81d0;
-  padding-top: 30px;
+  color: black;
+  padding-top: 40px;
+  line-height: 1;
 }
 h3 {
   font-size: 20px;
