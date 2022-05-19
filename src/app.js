@@ -15,9 +15,6 @@ if (minutes < 10) {
   minutes = `0${minutes}`;
 }
 
-let p = document.querySelector("p");
-p.innerHTML = `${day} <br> ${hour}:${minutes}`;
-
 function displayCity(event) {
   event.preventDefault();
   let cityInput = document.querySelector("#city-search");
@@ -64,3 +61,6 @@ function getCurrentPosition() {
 }
 let button = document.querySelector("button");
 button.addEventListener("click", getCurrentPosition);
+
+let p = document.querySelector("p");
+p.innerHTML = `${day} | ${hour}:${minutes}`;
