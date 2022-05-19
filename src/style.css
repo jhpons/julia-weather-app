@@ -1,17 +1,14 @@
-img {
+.image1 {
   display: block;
   margin: 0 auto;
   padding-top: 5px;
   text-align: center;
   width: 100%;
 }
-body {
-  font-family: "DM Sans", sans-serif;
-}
 .search-bar {
   padding-bottom: 40px;
   padding-top: 20px;
-  padding-left: 50px;
+  padding-left: 20px;
   padding-right: 5px;
 }
 .details {
@@ -19,38 +16,45 @@ body {
   padding-left: -10px;
 }
 
-.unit {
-  font-size: 14px;
-  position: relative;
-  top: -16px;
-  left: 5px;
-}
-.temp-info {
-  padding-top: 5px;
-}
-h1 {
-  text-align: right;
-  padding-bottom: 20px;
-}
-ul {
-  font-size: 20px;
-  list-style: none;
-  text-align: left;
-  font-size: 18px;
+.currentTemperature {
   color: black;
-  padding-top: 15px;
-  line-height: 1;
-}
-h3 {
-  font-size: 20px;
+  font-size: 40px;
+  display: block;
   text-align: center;
 }
+.unit {
+  font-size: 14px;
+}
+.weather-temperatre img {
+  float: left;
+}
+
 .weather-app {
   border: 1px solid black;
   padding: 20px;
   border-radius: 6px;
   margin: 15px;
-  max-width: 800px;
+  max-width: 600px;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+}
+li {
+  font-size: 20px;
+  list-style: none;
+  text-align: left;
+  color: black;
+  margin: 0;
+  padding: 0;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+h3 {
+  font-size: 20px;
+  text-align: center;
 }
 h4 {
   font-size: 10px;

@@ -20,7 +20,7 @@
   <body>
     <div class="container">
         <div class="weather-app">
-      <img src="images/mountainlake.PNG" width="400" />
+      <img src="images/mountainlake.PNG" width="400" class="image1"/>
     </br>
     <h2>
     </h2>
@@ -44,17 +44,23 @@
          </p>
       </form>
     
-      <h1>
+      
       <div class="row">
+        <div class="col-6"> 
+          <div class="weather-temperature">
+            <img 
+              src="" 
+              id="icon" 
+              class="float-left"
+            />   
+          </div> 
+          <div class="clearfix">
+           <span id="degrees" class="currentTemperature">65°</span><span class="unit"><a href "#" id="tempF">F</a> | <a href "#" id="tempC">C</a> </span> 
+          </div>  
+        </div>
+        
         <div class="col-6">
-          <div class="weather-details"> 
-            <img src="" id="icon"/>
-          <div class="temp-info">      
-          <span id="degrees">65°</span> <span class="unit"><a href "#" id="tempF">F</a> | <a href "#" id="tempC">C</a> </span>   
-            </div>
-          </div>
-          </div>
-        <div class="col-6">
+          
               <ul>
                   <li>
                     Wind: <span id="wind"></span> km/h 
@@ -64,9 +70,9 @@
                   </li>
               </ul>
             </div>
+            
           </div>
-          
-    </h1>
+    
     <h3>    
           <div class="row">
               <div class="col=12">
@@ -97,6 +103,7 @@
     </div>
   </div>
   </div>
+</div>
   <h4>
     <a href="https://github.com/jhpons/julia-weather-app" target="_blank">Open source code</a> by Julia Pons
   </h4>
