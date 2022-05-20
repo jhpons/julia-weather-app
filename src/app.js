@@ -56,6 +56,8 @@ function showTemperature(response) {
   wind.innerHTML = Math.round(response.data.wind.speed);
   let humidity = document.querySelector("#humidity");
   humidity.innerHTML = response.data.main.humidity;
+  let description = document.querySelector("#description");
+  description.innerHTML = response.data.weather[0].description;
   let icon = document.querySelector("#icon");
   icon.setAttribute(
     "src",
@@ -75,7 +77,7 @@ function getCurrentPosition() {
 let button = document.querySelector("button");
 button.addEventListener("click", getCurrentPosition);
 
-let p = document.querySelector("p");
-p.innerHTML = `${day} | ${hour}:${minutes}`;
+let dateTime = document.querySelector("#dateTime");
+dateTime.innerHTML = `${day} | ${hour}:${minutes}`;
 
 let celsiusTemperature = null;
