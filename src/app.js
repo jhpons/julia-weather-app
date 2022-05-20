@@ -27,15 +27,24 @@ function displayCity(event) {
 let form = document.querySelector("#city");
 form.addEventListener("submit", displayCity);
 
+function showTempF(event) {
+  event.preventDefault();
+  let degrees = document.querySelector("#degrees");
+  degrees.innerHTML = Math.round((celsiusTemperature * 9) / 5 + 32);
+}
+let fahrenheit = document.querySelector("#tempF");
+fahrenheit.addEventListener("click", showTempF);
+
 function showTempC(event) {
   event.preventDefault();
   let degrees = document.querySelector("#degrees");
-  degrees.innerHTML = "18°";
+  degrees.innerHTML = Math.round(celsiusTemperature);
 }
 let celsius = document.querySelector("#tempC");
 celsius.addEventListener("click", showTempC);
 
 function showTemperature(response) {
+  celsiusTemperature = response.data.main.temp;
   let temperature = Math.round(response.data.main.temp);
   let degrees = document.querySelector("#degrees");
   degrees.innerHTML = `${temperature}`;
@@ -64,3 +73,5 @@ button.addEventListener("click", getCurrentPosition);
 
 let p = document.querySelector("p");
 p.innerHTML = `${day} | ${hour}:${minutes}`;
+
+let celsiusTemperature = null;
