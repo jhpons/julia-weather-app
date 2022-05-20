@@ -30,6 +30,8 @@ form.addEventListener("submit", displayCity);
 function showTempF(event) {
   event.preventDefault();
   let degrees = document.querySelector("#degrees");
+  celsius.classList.remove("active");
+  fahrenheit.classList.add("active");
   degrees.innerHTML = Math.round((celsiusTemperature * 9) / 5 + 32);
 }
 let fahrenheit = document.querySelector("#tempF");
@@ -38,6 +40,8 @@ fahrenheit.addEventListener("click", showTempF);
 function showTempC(event) {
   event.preventDefault();
   let degrees = document.querySelector("#degrees");
+  celsius.classList.add("active");
+  fahrenheit.classList.remove("active");
   degrees.innerHTML = Math.round(celsiusTemperature);
 }
 let celsius = document.querySelector("#tempC");
