@@ -14,7 +14,26 @@ let minutes = today.getMinutes();
 if (minutes < 10) {
   minutes = `0${minutes}`;
 }
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Monday", "Tuesday", "Wedensday"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+    <div class="col=12">
+      <span class="weather-forecast-day">${day}</span>
+      <span class = "weather-forecast-max">50° |</span>
+      <span class = "weather-forecast-min">39°</span> 
+      <span class = "forecast-emoji">⛅</span>
+    </div>
+  `;
+  });
 
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
 function displayCity(event) {
   event.preventDefault();
   let cityInput = document.querySelector("#city-search");
@@ -81,3 +100,5 @@ let dateTime = document.querySelector("#dateTime");
 dateTime.innerHTML = `${day} | ${hour}:${minutes}`;
 
 let celsiusTemperature = null;
+
+displayForecast();
