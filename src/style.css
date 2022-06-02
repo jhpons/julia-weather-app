@@ -66,6 +66,9 @@
   font-size: 15px;
   opacity: 0.7;
 }
+.forecast-emoji {
+  text-align: left;
+}
 body {
   font-family: "DM Sans", sans-serif;
 }
