@@ -30,10 +30,11 @@ function formatDates(timestamp) {
 }
 function displayForecast(response) {
   let forecast = response.data.daily;
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
   forecast.forEach(function (forecastDay, index) {
-    if (index < 5) {
+    if (1 <= index && index <= 5) {
       forecastHTML =
         forecastHTML +
         `
@@ -45,7 +46,11 @@ function displayForecast(response) {
       <span class = "weather-forecast-min">${Math.round(
         forecastDay.temp.min
       )}°</span> 
-      <span class = "forecast-emoji">⛅</span>
+      <span class = "forecast-emoji"><img src="http://openweathermap.org/img/wn/${
+        forecastDay.weather[0].icon
+      }@2x.png"
+        width="42"/>
+      </span>
     </div>
   `;
     }
