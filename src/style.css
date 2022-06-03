@@ -38,6 +38,10 @@
   border-radius: 6px;
   margin: 15px;
   max-width: 600px;
+  background-image: url("images/nightsky.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: bottom center;
 }
 
 .col-md-12 {
@@ -62,11 +66,9 @@
 .weather-forecast {
   line-height: 40px;
 }
+
 body {
   font-family: "DM Sans", sans-serif;
-  background-image: url("images/nightsky.jpg");
-  background-size: 50%;
-  background-repeat: no-repeat;
   color: white;
 }
 li {
@@ -84,6 +86,7 @@ ul {
 }
 h2 {
   text-transform: capitalize;
+  padding-left: 5px;
 }
 h3 {
   font-size: 20px;
@@ -96,4 +99,5 @@ h4 {
 }
 p {
   border-bottom: 0px;
+  padding-top: 8px;
 }
