@@ -10,10 +10,18 @@ let days = [
 ];
 let day = days[today.getDay()];
 let hour = today.getHours();
+if (hour === 0) {
+  hour = `12`;
+}
+if (hour > 12) {
+  hour = hour - 12;
+  session = "pm";
+}
 let minutes = today.getMinutes();
 if (minutes < 10) {
   minutes = `0${minutes}`;
 }
+
 function formatDates(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDay();
