@@ -38,7 +38,6 @@ function formatDates(timestamp) {
 }
 function displayForecast(response) {
   let forecast = response.data.daily;
-  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
   forecast.forEach(function (forecastDay, index) {
@@ -102,17 +101,23 @@ function showTemperature(response) {
   );
   getForecast(response.data.coord);
 }
+
 function showPosition(position) {
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=6515f856935f19ac3c6d56e1e4dfc07c&units=imperial`;
-  axios.get(`${apiUrl}`).then(showTemperature);
+  axios.get(`${apiUrl}`).then(showTemperature).then(showCurrentCity);
 }
 function getCurrentPosition() {
   navigator.geolocation.getCurrentPosition(showPosition);
 }
+function showCurrentCity(response) {
+  h2 = document.querySelector("h2");
+  h2.innerHTML = response.data.name;
+}
 let button = document.querySelector("button");
 button.addEventListener("click", getCurrentPosition);
+button.addEventListener("click", showCurrentCity);
 
 let dateTime = document.querySelector("#dateTime");
 dateTime.innerHTML = `${day} | ${hour}:${minutes}`;
