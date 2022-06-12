@@ -74,8 +74,6 @@ function getForecast(coordinates) {
 function displayCity(event) {
   event.preventDefault();
   let cityInput = document.querySelector("#city-search");
-  h2 = document.querySelector("h2");
-  h2.innerHTML = `${cityInput.value}`;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput.value}&appid=6515f856935f19ac3c6d56e1e4dfc07c&units=imperial`;
   axios.get(`${apiUrl}`).then(showTemperature);
 }
@@ -84,6 +82,8 @@ let form = document.querySelector("#city");
 form.addEventListener("submit", displayCity);
 
 function showTemperature(response) {
+  h2 = document.querySelector("h2");
+  h2.innerHTML = response.data.name;
   fahrenheitTemperature = response.data.main.temp;
   let temperature = Math.round(response.data.main.temp);
   let degrees = document.querySelector("#degrees");
